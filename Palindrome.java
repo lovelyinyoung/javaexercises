@@ -14,6 +14,15 @@ class Palindrome {
   }
 
   public static void main (String[] args) {  
-    System.out.print(function("racecar")); 
+//    System.out.print(function("racecar"));
+    System.out.print(isPalindrome(121));
+  }
+
+  /** LeetCode **/
+  public static boolean isPalindrome(int x) {
+    StringBuilder builder = new StringBuilder(String.valueOf(x));
+    builder.reverse();
+
+    return builder.toString().equals(String.valueOf(x)) ? true : false;
   }
 }
