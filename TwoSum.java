@@ -44,7 +44,23 @@ class TwoSum {
 
     // return count == 0 ? "-1" : sb.toString();
 
-  public static void main (String[] args) {  
-    System.out.print(function (new int[] {17, 4, 5, 6, 10, 11, 4, -3, -5, 3, 15, 2, 7})); 
+  public static void main (String[] args) {
+//    System.out.print(function (new int[] {17, 4, 5, 6, 10, 11, 4, -3, -5, 3, 15, 2, 7}));
+    System.out.print(twoSum (new int[] {2,7,11,15}, 9));
+  }
+
+  /** LeetCode **/
+  public static int[] twoSum(int[] nums, int target) {
+    Map<Integer, Integer> map = new HashMap<>(); //value, index
+    for (int i = 0; i < nums.length; i++) {
+      int current = nums[i];
+      int x = target - current;
+
+      if (map.containsKey(x)) {
+        return new int[]{map.get(x), i};
+      }
+      map.put(current, i);
+    }
+    return null;
   }
 }
